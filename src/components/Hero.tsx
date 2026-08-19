@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import PhoenixMark from './PhoenixMark'
+// import PhoenixMark from './PhoenixMark'
 import { photos } from '../data/photos'
 import logo from "../assets/logonobg.png"
 
