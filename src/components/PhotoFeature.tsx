@@ -33,7 +33,7 @@ export default function PhotoFeature({
           <motion.img
             initial={{ scale: 1.15 }}
             whileInView={{ scale: 1 }}
-            viewport={{ once: true, amount: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
             src={photo}
             alt={photoAlt}
