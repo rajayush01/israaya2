@@ -13,16 +13,16 @@ export default function ChapterCard({ piece, index }: { piece: ChapterPiece; ind
     >
       {/* image / fabric panel */}
       <motion.div
-        initial={{ clipPath: 'inset(0 0 100% 0)' }}
-        whileInView={{ clipPath: 'inset(0 0 0% 0)' }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 1.1, ease: [0.65, 0, 0.35, 1] }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.15, margin: '0px 0px -10% 0px' }}
+        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         className="relative overflow-hidden"
       >
         <motion.div
           initial={{ scale: 1.15 }}
           whileInView={{ scale: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.15, margin: '0px 0px -10% 0px' }}
           transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
           className="absolute inset-0"
         >

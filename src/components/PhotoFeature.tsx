@@ -24,17 +24,17 @@ export default function PhotoFeature({
     <section className={`relative ${tone === 'ivory' ? 'bg-ivory' : 'bg-sand'} py-24 md:py-32 px-6 md:px-10`}>
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
         <motion.div
-          initial={{ clipPath: 'inset(0 0 100% 0)' }}
-          whileInView={{ clipPath: 'inset(0 0 0% 0)' }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1.1, ease: [0.65, 0, 0.35, 1] }}
+          initial={{ opacity: 0, scale: 1.04 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.15, margin: '0px 0px -10% 0px' }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className={`relative aspect-[4/5] overflow-hidden ${reversed ? 'md:order-2' : ''}`}
         >
           <motion.img
-            initial={{ scale: 1.15 }}
+            initial={{ scale: 1.12 }}
             whileInView={{ scale: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, amount: 0.15, margin: '0px 0px -10% 0px' }}
+            transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
             src={photo}
             alt={photoAlt}
             className="w-full h-full object-cover"
@@ -44,7 +44,7 @@ export default function PhotoFeature({
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
         >
           <Flourish className="w-9 h-7 text-gold-deep mb-6" />
