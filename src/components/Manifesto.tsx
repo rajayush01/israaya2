@@ -17,6 +17,7 @@ export default function Manifesto() {
           viewport={{ once: true, amount: 0.5 }}
           variants={fade}
         >
+<<<<<<< HEAD
           <span className="eyebrow text-maroon/60">Our Story</span>
           <h2 className="font-display text-4xl md:text-5xl leading-[1.05] text-ink mt-5">
             Heritage,
@@ -24,6 +25,15 @@ export default function Manifesto() {
             without
             <br />
             <span className="italic text-maroon">the compromise.</span>
+=======
+          <span className="eyebrow text-maroon/60">The House</span>
+          <h2 className="font-display text-4xl md:text-5xl leading-[1.05] text-ink mt-5">
+            Every piece
+            <br />
+            begins as a
+            <br />
+            <span className="italic text-maroon">memory.</span>
+>>>>>>> ef60104c4d56e5c386e4299865ffec061bce503a
           </h2>
 
           <motion.div
@@ -51,6 +61,7 @@ export default function Manifesto() {
           transition={{ delay: 0.15 }}
         >
           <p className="font-display text-2xl md:text-[1.7rem] leading-relaxed text-ink/85">
+<<<<<<< HEAD
             Israaya is built on a simple belief — that Indian wear does not have to choose
             between heritage and ease, between occasion and everyday, between tradition and
             the rest of the world.
@@ -63,6 +74,18 @@ export default function Manifesto() {
             will never be repeated. Nothing is mass produced; every piece is made to order and
             hand embroidered only once it is called for, because slow fashion is not a
             limitation here — it is the intended way forward.
+=======
+            Israaya works from the belief that Indianwear should feel handed down before it's
+            ever worn — carrying the weight of resham thread, the patience of hand embroidery,
+            and a silhouette that moves the way memory does.
+          </p>
+          <p className="font-body text-base md:text-lg leading-relaxed text-ink/60 max-w-xl">
+            Each garment is worked by hand across weeks, not hours. Motifs are chosen with
+            intention — a peacock, a garden, a pair of birds in flight — so that no detail on the
+            outfit feels accidental. The result sits somewhere between an heirloom and a first
+            wear: comfortable enough for a summer morning, considered enough for the most formal
+            room in the house.
+>>>>>>> ef60104c4d56e5c386e4299865ffec061bce503a
           </p>
           <div className="flex items-center gap-4 pt-2">
             <span className="h-px w-12 bg-gold-deep/60" />
