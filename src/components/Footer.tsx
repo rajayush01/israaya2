@@ -16,10 +16,7 @@ export default function Footer() {
         <div>
           <span className="eyebrow text-gold-soft/70">Explore</span>
           <ul className="mt-5 space-y-3 text-sm">
-<<<<<<< HEAD
             <li><Link to="/about" className="hover:text-gold-soft transition-colors">Our Story</Link></li>
-=======
->>>>>>> ef60104c4d56e5c386e4299865ffec061bce503a
             <li><Link to="/collection" className="hover:text-gold-soft transition-colors">Collection — Nikhaar</Link></li>
             <li><Link to="/craft" className="hover:text-gold-soft transition-colors">The Craft</Link></li>
             <li><Link to="/journal" className="hover:text-gold-soft transition-colors">Journal</Link></li>

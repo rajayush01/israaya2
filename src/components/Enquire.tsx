@@ -21,13 +21,10 @@ export default function Enquire() {
         <p className="font-body text-ink/60 mt-6 max-w-lg mx-auto leading-relaxed">
           Share your occasion, sizing, and the piece that caught your eye — our styling team
           responds within two working days with fabric notes, timelines, and fitting guidance.
-<<<<<<< HEAD
           Every piece is made to order, with standard delivery of 15–20 days from order
           confirmation, inclusive of shipping within India — international orders may take
           slightly longer. Reach out on WhatsApp or email to personalise your piece or request
           faster delivery for an upcoming event.
-=======
->>>>>>> ef60104c4d56e5c386e4299865ffec061bce503a
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">

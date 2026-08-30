@@ -8,11 +8,7 @@ export default function JournalPage() {
   return (
     <>
       <PageHero
-<<<<<<< HEAD
-        eyebrow="Our Story"
-=======
         eyebrow="The Journal"
->>>>>>> ef60104c4d56e5c386e4299865ffec061bce503a
         title="Notes from the House"
         subtitle="On memory, craft, and building Indianwear that travels."
         photo={photos.brideDetail}
@@ -22,7 +18,6 @@ export default function JournalPage() {
       <Manifesto />
 
       <PhotoFeature
-<<<<<<< HEAD
         photo={photos.needleMacro}
         photoAlt="Macro photograph of hand embroidery mid-stitch"
         eyebrow="Our Founder"
@@ -30,15 +25,6 @@ export default function JournalPage() {
         paragraphs={[
           'Israaya is the work of Khushi Dang, Founder and Creative Director — built from a pull toward Indian craft, fashion and culture that began early, sharpened by an education in fashion and luxury business between London and Manchester, and by a life lived between India and abroad.',
           '"Indian artists and Indian ideas have shaped the world for centuries without ever being given full credit for it. Israaya exists to change that, one piece at a time." Growing up in India, living overseas and travelling widely became the lens Israaya was eventually built through — a way of seeing Indian craftsmanship not as something regional, but as something the rest of the world had simply never been given proper access to.',
-=======
-        photo={photos.redTextile}
-        photoAlt="Deep red silk textile, close up"
-        eyebrow="On Occasion"
-        title="Made for the room it enters."
-        paragraphs={[
-          "A piece has to work twice — once in photographs, taken close and in bright light, and once in the room itself, under whatever light the evening actually has. We fit for both.",
-          'That means proportions that read from across a hall and details that reward whoever gets close enough to look. Neither is optional.',
->>>>>>> ef60104c4d56e5c386e4299865ffec061bce503a
         ]}
       />
 

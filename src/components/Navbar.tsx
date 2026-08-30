@@ -11,7 +11,7 @@ const leftLinks = [
 ]
 
 const rightLinks = [
-  { label: 'Our Story', to: '/journal' },
+  { label: 'Journal', to: '/journal' },
   { label: 'Enquire', to: '/enquire' },
 ]
 
