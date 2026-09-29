@@ -11,15 +11,15 @@ export default function JournalPage() {
         eyebrow="The Journal"
         title="Notes from the House"
         subtitle="On memory, craft, and building Indianwear that travels."
-        photo={photos.brideDetail}
-        photoAlt="Portrait in traditional Indian bridal jewellery"
+        photo={photos.journalHero}
+        photoAlt="Israaya, notes from the house"
       />
 
       <Manifesto />
 
       <PhotoFeature
-        photo={photos.needleMacro}
-        photoAlt="Macro photograph of hand embroidery mid-stitch"
+        photo={photos.journalFounder}
+        photoAlt="Hand embroidery detail from Israaya"
         eyebrow="Our Founder"
         title="A lens built by living between worlds."
         paragraphs={[

@@ -10,13 +10,13 @@ export default function EnquirePage() {
         eyebrow="Private Enquiries"
         title="Begin a Piece"
         subtitle="Made to order, start to finish, for one wearer at a time."
-        photo={photos.redTextile}
-        photoAlt="Deep red silk textile, close up"
+        photo={photos.enquireHero}
+        photoAlt="Israaya, made to order"
       />
 
       <PhotoFeature
-        photo={photos.silkFolds}
-        photoAlt="Draped silk fabric, before it is cut"
+        photo={photos.enquireAppointment}
+        photoAlt="Israaya, by appointment"
         eyebrow="By Appointment"
         title="A conversation before a single stitch."
         paragraphs={[

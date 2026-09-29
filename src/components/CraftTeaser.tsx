@@ -16,8 +16,8 @@ export default function CraftTeaser() {
         <div className="relative aspect-[4/5] overflow-hidden order-2 md:order-1">
           <motion.div style={{ y }} className="absolute inset-0 -top-[10%] -bottom-[10%]">
             <img
-              src={photos.needleMacro}
-              alt="Macro photograph of a sewing needle mid-stitch"
+              src={photos.craftTeaser}
+              alt="Israaya hand embroidery detail"
               className="w-full h-full object-cover"
             />
           </motion.div>

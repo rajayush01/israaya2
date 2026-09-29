@@ -12,13 +12,13 @@ export default function AboutPage() {
         eyebrow="Our Story"
         title="Craft, Reconsidered"
         subtitle="Indian wear does not have to choose between heritage and ease, between occasion and everyday, between tradition and the rest of the world."
-        photo={photos.bridalSaree}
-        photoAlt="Editorial portrait in a hand-embroidered saree"
+        photo={photos.aboutHero}
+        photoAlt="Israaya editorial, hand-embroidered Indian wear"
       />
 
       <PhotoFeature
-        photo={photos.silkFolds}
-        photoAlt="Draped silk fabric, before it is cut"
+        photo={photos.aboutStory}
+        photoAlt="Israaya piece, made to order"
         eyebrow="Our Story"
         title="Reimagining what Indian wear can be."
         paragraphs={[
@@ -30,8 +30,8 @@ export default function AboutPage() {
       />
 
       <PhotoFeature
-        photo={photos.needleMacro}
-        photoAlt="Macro photograph of hand embroidery mid-stitch"
+        photo={photos.aboutFounder}
+        photoAlt="Hand embroidery detail from Israaya"
         eyebrow="Our Founder"
         title="A lens built by living between worlds."
         paragraphs={[
@@ -44,8 +44,8 @@ export default function AboutPage() {
       />
 
       <PhotoFeature
-        photo={photos.loomThread}
-        photoAlt="Close-up of a loom with many threads"
+        photo={photos.aboutPhilosophy}
+        photoAlt="Israaya craft and philosophy"
         eyebrow="Our Philosophy"
         title="As easy to live in as it is beautiful to look at."
         paragraphs={[
@@ -59,8 +59,8 @@ export default function AboutPage() {
       <Values />
 
       <PhotoFeature
-        photo={photos.redTextile}
-        photoAlt="Deep red silk textile, close up"
+        photo={photos.aboutMadeInIndia}
+        photoAlt="Israaya, made in India by karigar families"
         eyebrow="Made in India"
         title="India's craft, made by India's hands, for the world."
         paragraphs={[

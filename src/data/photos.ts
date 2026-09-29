@@ -1,35 +1,53 @@
-// All photographs are sourced from Unsplash and free to use under the Unsplash
-// License (https://unsplash.com/license) — free for commercial use, no attribution
-// required. Credited here anyway, as good practice.
-export const photos = {
-  // Rohit Dey — "Beautiful woman adorned in traditional indian jewelry"
-  brideDetail:
-    'https://images.unsplash.com/photo-1742891603547-950f510710d7?auto=format&fit=crop&w=1800&q=80',
-  // Rejaul Karim — "A woman in a traditional indian sari"
-  bridalSaree:
-    'https://images.unsplash.com/photo-1769500804057-ca1391bf4617?auto=format&fit=crop&w=1800&q=80',
-  // Thảo Phạm — "Close-up of a loom with many threads"
-  loomThread:
-    'https://images.unsplash.com/photo-1760328715296-9714daa8a737?auto=format&fit=crop&w=1800&q=80',
-  // Susan Wilkinson — "Draped white silk fabric folds"
-  silkFolds:
-    'https://images.unsplash.com/photo-1606259458027-54d2a728b6ab?auto=format&fit=crop&w=1800&q=80',
-  // Susan Wilkinson — "Pink textile in close up photography"
-  pinkTextile:
-    'https://images.unsplash.com/photo-1617055407123-3d7130c1f940?auto=format&fit=crop&w=1800&q=80',
-  // MontyLov — "Red textile"
-  redTextile:
-    'https://images.unsplash.com/photo-1518893063132-36e46dbe2428?auto=format&fit=crop&w=1800&q=80',
-  // Ilya lix — "Macro photography of sewing needle"
-  needleMacro:
-    'https://images.unsplash.com/photo-1502217625004-89c03571bcca?auto=format&fit=crop&w=1800&q=80',
+// Every photograph on the site comes from uploaded-links.json (the Israaya
+// R2 bucket). To swap an image, change the index next to its slot below —
+// nothing else in the codebase references image URLs.
+import links from './uploaded-links.json'
+
+export const allPhotos: string[] = links.map((l) => l.url)
+
+const at = (i: number): string => {
+  const url = allPhotos[i]
+  if (!url) throw new Error(`photos: no image at index ${i} in uploaded-links.json`)
+  return url
 }
 
-export const photoCredits = [
-  { name: 'Rohit Dey', url: 'https://unsplash.com/@rohit16dey' },
-  { name: 'Rejaul Karim', url: 'https://unsplash.com/@rejaul_creativedesign' },
-  { name: 'Thảo Phạm', url: 'https://unsplash.com/@thora_phum' },
-  { name: 'Susan Wilkinson', url: 'https://unsplash.com/@susan_wilkinson' },
-  { name: 'MontyLov', url: 'https://unsplash.com/@montylov' },
-  { name: 'Ilya lix', url: 'https://unsplash.com/@ilya90' },
-]
+export const photos = {
+  // Collection — Nikhaar, Chapter I (one per piece, same order as collection.ts)
+  piece06: at(0),
+  piece05: at(1),
+  piece04: at(2),
+  piece03: at(3),
+  piece02: at(4),
+  piece01: at(5),
+
+  // Home
+  hero: at(6),
+  manifesto: at(7),
+  fabric1: at(8),
+  fabric2: at(9),
+  fabric3: at(10),
+  craftTeaser: at(11),
+  journalTeaser: at(12),
+
+  // Craft section (three techniques)
+  technique1: at(13),
+  technique2: at(14),
+  technique3: at(15),
+
+  // Page heroes
+  collectionHero: at(16),
+  aboutHero: at(17),
+  craftHero: at(18),
+  journalHero: at(19),
+  enquireHero: at(20),
+
+  // Page features
+  aboutStory: at(21),
+  aboutFounder: at(22),
+  aboutPhilosophy: at(23),
+  aboutMadeInIndia: at(24),
+  craftThread: at(25),
+  craftFinish: at(26),
+  journalFounder: at(27),
+  enquireAppointment: at(28),
+}

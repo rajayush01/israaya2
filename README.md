@@ -49,18 +49,13 @@ The nav now routes to standalone pages instead of scrolling to homepage sections
 
 ## Photography
 
-Editorial photography (hero banners, page headers, and the two craft/journal photo features) uses
-three free-to-use Unsplash photos, credited in `src/data/photos.ts` and free for commercial use
-under the [Unsplash License](https://unsplash.com/license) — swap them for real campaign shoot
-photography whenever it's ready by replacing the URLs in that file.
+Every photograph on the site comes from `src/data/uploaded-links.json` (the Israaya R2 bucket).
+`src/data/photos.ts` maps each slot (hero, page heroes, feature blocks, collection cards) to an
+index in that file — change the index next to a slot to swap its image. Only the brand logo in
+`src/assets` is bundled locally.
 
-Product imagery on the Nikhaar chapter cards (both on the homepage teaser and the full
-`/collection` page) now layers a real photograph under a colour-matched duotone tint keyed to
-each piece's actual swatch (`mix-blend-mode: multiply`) — so every card reads as a styled colour
-treatment of that piece's palette rather than a literal, misleading product shot. This uses the
-same three sourced Unsplash photos, reused across pieces. Swap in real product photography
-whenever it's ready: in `data/collection.ts`, point each piece's `photo` field at your asset —
-the tint and reveal animation will apply automatically.
+Product imagery on the Nikhaar chapter cards layers the photograph under a colour-matched
+duotone tint keyed to each piece's swatch (`mix-blend-mode: multiply`).
 
 ## Run it
 

@@ -11,8 +11,8 @@ export default function CollectionPage() {
         eyebrow="Chapter I"
         title="Nikhaar"
         subtitle="Six pieces from our debut chapter, worked by hand, numbered in the order they were made."
-        photo={photos.bridalSaree}
-        photoAlt="Editorial portrait in a hand-embroidered saree"
+        photo={photos.collectionHero}
+        photoAlt="Nikhaar, Chapter I — Israaya"
       />
       <CollectionInfo />
       <div className="divide-y divide-gold/15 bg-ink">

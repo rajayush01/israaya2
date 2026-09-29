@@ -3,9 +3,9 @@ import { photos } from '../data/photos'
 import Flourish from './Flourish'
 
 const items = [
-  { photo: photos.silkFolds, alt: 'Draped silk fabric folds', caption: 'Silk, before it is cut' },
-  { photo: photos.redTextile, alt: 'Deep red silk textile', caption: 'Colour, matched by hand' },
-  { photo: photos.pinkTextile, alt: 'Dusk pink textile close up', caption: 'Every tone, checked twice' },
+  { photo: photos.fabric1, alt: 'Israaya silk, before it is cut', caption: 'Silk, before it is cut' },
+  { photo: photos.fabric2, alt: 'Israaya colour, matched by hand', caption: 'Colour, matched by hand' },
+  { photo: photos.fabric3, alt: 'Israaya tones, checked twice', caption: 'Every tone, checked twice' },
 ]
 
 const fade = {

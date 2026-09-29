@@ -19,8 +19,8 @@ export const nikhaarCollection: ChapterPiece[] = [
     chapter: 'Chapter I',
     collection: 'Nikhaar',
     swatch: ['#F1D3BE', '#E9C3AC'],
-    photo: photos.pinkTextile,
-    photoAlt: 'Komal Tara — styled in soft peach silk, Nikhaar chapter I',
+    photo: photos.piece06,
+    photoAlt: 'Komal Tara — soft peach silk set, Nikhaar chapter I',
     description: [
       'Komal Tara sits in a soft peach silk, comprising a long straight kurta, matching straight pants and a dupatta finished in a unique textured organza that sets it apart from the rest of the set.',
       'Resham thread and sequin embroidery run along the neckline and down the front split of the kurta, kept precise and detailed against an otherwise clean silhouette — the dupatta\u2019s texture adding dimension without competing with it.',
@@ -33,8 +33,8 @@ export const nikhaarCollection: ChapterPiece[] = [
     chapter: 'Chapter I',
     collection: 'Nikhaar',
     swatch: ['#E2D0A6', '#DCC9A3'],
-    photo: photos.loomThread,
-    photoAlt: 'Sona Pankh — champagne gold thread work, Nikhaar chapter I',
+    photo: photos.piece05,
+    photoAlt: 'Sona Pankh — champagne gold silk set, Nikhaar chapter I',
     description: [
       'Sona Pankh is worked in a warm champagne gold silk — a straight kurta and farsi salwar kept comparatively minimal, so the heaviest hand-embroidered dupatta in the collection can carry the weight.',
       'Resham thread, pearls and sequins are worked by hand into a dense pattern of trees and birds across the dupatta, letting the set be styled two ways: fully embellished with the dupatta, or relaxed and everyday without it.',
@@ -47,7 +47,7 @@ export const nikhaarCollection: ChapterPiece[] = [
     chapter: 'Chapter I',
     collection: 'Nikhaar',
     swatch: ['#F3D9E0', '#E2A8B8'],
-    photo: photos.redTextile,
+    photo: photos.piece04,
     photoAlt: 'Kamal — pink ombre farsi suit set, Nikhaar chapter I',
     description: [
       'Kamal is built around a version of festive dressing that whispers instead of shouts — silk meets a flowing organza dupatta in an ombre that fades gently from one shade into another.',
@@ -61,7 +61,7 @@ export const nikhaarCollection: ChapterPiece[] = [
     chapter: 'Chapter I',
     collection: 'Nikhaar',
     swatch: ['#F5F1E8', '#E4DCC8'],
-    photo: photos.silkFolds,
+    photo: photos.piece03,
     photoAlt: 'Sitara Chandni — white anarkali with silver zardozi, Nikhaar chapter I',
     description: [
       'Sitara Chandni is the white staple anarkali you\u2019ll keep coming back to — a three-piece set in pure Chanderi, inspired by the way moonlight sits on everything it touches, never loud, never fading into the background either.',
@@ -75,7 +75,7 @@ export const nikhaarCollection: ChapterPiece[] = [
     chapter: 'Chapter I',
     collection: 'Nikhaar',
     swatch: ['#DCD0E8', '#C3AEDD'],
-    photo: photos.bridalSaree,
+    photo: photos.piece02,
     photoAlt: 'Madhura — lilac sharara set with dori work, Nikhaar chapter I',
     description: [
       'Madhura is the balance of subtle and fun — simple enough to feel effortless, detailed enough to become a statement piece the moment you put it on. Crafted in pure Chanderi, it carries white and silver dori hand work embellished with pearls.',
@@ -89,7 +89,7 @@ export const nikhaarCollection: ChapterPiece[] = [
     chapter: 'Chapter I',
     collection: 'Nikhaar',
     swatch: ['#C7D3A3', '#A9BB7E'],
-    photo: photos.brideDetail,
+    photo: photos.piece01,
     photoAlt: 'Hansa — pista green dhoti set with dori embroidery, Nikhaar chapter I',
     description: [
       'Hansa is our interpretation of swans in love, drifting through a garden of their own making — a three-piece dhoti set in satin, worked with dori embroidery and pearl work in a vibrant colour that feels alive the moment it catches light.',

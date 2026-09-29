@@ -11,13 +11,13 @@ export default function CraftPage() {
         eyebrow="The Craft"
         title="Worked by Hand"
         subtitle="Every yard of thread on an Israaya piece was pulled through fabric by a person, not a machine."
-        photo={photos.loomThread}
-        photoAlt="Close-up of a loom with many threads"
+        photo={photos.craftHero}
+        photoAlt="Israaya craft, worked by hand"
       />
 
       <PhotoFeature
-        photo={photos.loomThread}
-        photoAlt="Threads on a loom, prepared before embroidery begins"
+        photo={photos.craftThread}
+        photoAlt="Thread work on an Israaya piece"
         eyebrow="Before the Needle"
         title="The thread comes first."
         paragraphs={[
@@ -30,8 +30,8 @@ export default function CraftPage() {
       <Craft />
 
       <PhotoFeature
-        photo={photos.needleMacro}
-        photoAlt="Macro photograph of a sewing needle mid-stitch"
+        photo={photos.craftFinish}
+        photoAlt="Finishing detail on an Israaya piece"
         eyebrow="The Finish"
         title="Detail is where the work shows."
         paragraphs={[

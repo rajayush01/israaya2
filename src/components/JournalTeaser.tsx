@@ -49,8 +49,8 @@ export default function JournalTeaser() {
         <div className="relative aspect-[4/5] overflow-hidden">
           <motion.div style={{ y }} className="absolute inset-0 -top-[10%] -bottom-[10%]">
             <img
-              src={photos.brideDetail}
-              alt="Portrait in traditional Indian bridal jewellery"
+              src={photos.journalTeaser}
+              alt="Israaya, from the journal"
               className="w-full h-full object-cover"
             />
           </motion.div>

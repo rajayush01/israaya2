@@ -45,7 +45,7 @@ export default function Hero() {
         className="absolute inset-0"
       >
         <img
-          src={photos.bridalSaree}
+          src={photos.hero}
           alt=""
           className="w-full h-[120%] object-cover object-top"
         />

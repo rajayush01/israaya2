@@ -34,8 +34,8 @@ export default function Manifesto() {
             className="relative mt-10 aspect-[3/4] max-w-[220px] overflow-hidden"
           >
             <img
-              src={photos.silkFolds}
-              alt="Draped silk fabric, before it is cut"
+              src={photos.manifesto}
+              alt="Israaya, hand-finished Indian wear"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 grain" />

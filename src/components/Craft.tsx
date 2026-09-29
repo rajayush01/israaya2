@@ -6,20 +6,20 @@ const techniques = [
   {
     title: 'Resham Thread',
     body: 'The base of nearly every piece — silk thread worked by hand in long, patient rows until the motif sits slightly raised off the fabric.',
-    photo: photos.loomThread,
-    alt: 'Resham thread prepared on a loom',
+    photo: photos.technique1,
+    alt: 'Resham thread work on an Israaya piece',
   },
   {
     title: 'Pearl & Sequin Work',
     body: 'Added after the thread work is done, one pass at a time, so the shine never overwhelms the motif underneath it.',
-    photo: photos.needleMacro,
-    alt: 'Macro photograph of a needle mid-stitch',
+    photo: photos.technique2,
+    alt: 'Pearl and sequin work on an Israaya piece',
   },
   {
     title: 'Motif & Memory',
     body: 'Peacocks, gardens, birds in flight — each motif is chosen for what it represents, then placed so it only reveals itself in movement.',
-    photo: photos.brideDetail,
-    alt: 'Detail of hand-finished jewellery and embroidery work',
+    photo: photos.technique3,
+    alt: 'Motif detail on an Israaya piece',
   },
 ]
 
