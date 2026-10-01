@@ -37,8 +37,8 @@ export default function Hero() {
   return (
     <section ref={sectionRef} className="relative min-h-[100svh] w-full overflow-hidden bg-maroon-deep">
       {/* campaign photograph */}
-      <motion.div
-        initial={{ scale: 1.12 }}
+      {/* <motion.div
+        initial={{ scale: 1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 2.2, ease: [0.22, 1, 0.36, 1] }}
         style={{ y: imgY }}
@@ -49,7 +49,19 @@ export default function Hero() {
           alt=""
           className="w-full h-[120%] object-cover object-top"
         />
-      </motion.div>
+      </motion.div> */}
+      <motion.div
+  initial={{ scale: 1 }}
+  animate={{ scale: 1 }}
+  style={{ y: imgY }}
+  className="absolute inset-0"
+>
+  <img
+    src={photos.hero}
+    alt=""
+    className="w-full h-full object-cover object-center"
+  />
+</motion.div>
       <div
         className="absolute inset-0"
         style={{
