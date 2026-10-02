@@ -42,7 +42,7 @@ export default function CollectionTeaser() {
               transition={{ duration: 0.8, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
             >
               <Link to="/collection" className="group block">
-                <TiltCard className="relative aspect-[4/5] overflow-hidden mb-5">
+                <TiltCard className="relative aspect-[4/3] overflow-hidden mb-5">
                   <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105">
                     <img
                       src={piece.photo}
