@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { motion } from 'framer-motion'
-// import PhoenixMark from './PhoenixMark'
-import logo from "../assets/logonobg.png"
+import { motion, AnimatePresence } from 'framer-motion'
+import logo from '../assets/ISRAAYA LOGO.svg'
 
 const leftLinks = [
   { label: 'Our Story', to: '/about' },
@@ -32,31 +31,32 @@ export default function Navbar() {
     setOpen(false)
   }, [pathname])
 
-  const solid = scrolled || !isHome
+  const solid = scrolled || !isHome || open
+
+const linkClass = ({ isActive }: { isActive: boolean }) =>
+    `eyebrow transition-colors duration-300 hover:text-gold-deep ${
+      isActive ? (solid ? 'text-maroon' : 'text-gold-soft') : solid ? 'text-ink/70' : 'text-ivory/90'
+    }`
 
   return (
     <motion.header
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${
-        solid ? 'bg-ivory/90 backdrop-blur-md border-b border-ink/10' : 'bg-transparent'
-      }`}
+      className="fixed top-3 md:top-5 inset-x-0 z-50 px-3 md:px-8 pointer-events-none"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
-        <div className="grid grid-cols-3 items-center h-20 md:h-24">
+      <div
+        className={`pointer-events-auto mx-auto max-w-6xl rounded-full border backdrop-blur-md transition-all duration-500 ${
+          solid
+            ? 'bg-ivory/90 border-ink/10 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.25)]'
+            : 'bg-ink/20 border-ivory/20'
+        } ${open ? 'rounded-3xl md:rounded-full' : ''}`}
+      >
+        <div className="grid grid-cols-[1fr_auto_1fr] items-center h-16 md:h-20 px-5 md:px-10">
           {/* left links */}
           <nav className="hidden md:flex items-center gap-8">
             {leftLinks.map((l) => (
-              <NavLink
-                key={l.label}
-                to={l.to}
-                className={({ isActive }) =>
-                  `eyebrow transition-colors hover:text-gold-deep ${
-                    isActive ? (solid ? 'text-maroon' : 'text-gold-soft') : solid ? 'text-ink/70' : 'text-ivory/85'
-                  }`
-                }
-              >
+              <NavLink key={l.label} to={l.to} className={linkClass}>
                 {l.label}
               </NavLink>
             ))}
@@ -64,70 +64,65 @@ export default function Navbar() {
 
           {/* mobile toggle */}
           <button
-            className="md:hidden flex flex-col justify-center gap-1.5 w-8"
+            className="md:hidden flex flex-col justify-center gap-1.5 w-8 h-8"
             aria-label="Toggle menu"
+            aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
             <span className={`h-px w-full transition-colors ${solid ? 'bg-ink' : 'bg-ivory'}`} />
             <span className={`h-px w-5 transition-colors ${solid ? 'bg-ink' : 'bg-ivory'}`} />
           </button>
 
-          {/* centered mark */}
-          <Link to="/" className="flex flex-col items-center justify-self-center group">
+          {/* centered logo */}
+          <Link to="/" aria-label="Israaya home" className="flex items-center justify-center">
             <img
               src={logo}
               alt="Israaya Logo"
-              className={`w-7 h-7 md:w-10 md:h-10 transition-colors duration-500 ${
-                solid ? 'text-maroon' : 'text-gold'
-              }`}
+              className="h-12 md:h-20 w-auto object-contain select-none"
+              draggable={false}
             />
-            <span
-              className={`font-label text-[13px] md:text-sm tracking-widest2 mt-1 transition-colors duration-500 ${
-                solid ? 'text-ink' : 'text-ivory'
-              }`}
-            >
-              ISRAAYA
-            </span>
           </Link>
 
           {/* right links */}
           <nav className="hidden md:flex items-center gap-8 justify-self-end">
             {rightLinks.map((l) => (
-              <NavLink
-                key={l.label}
-                to={l.to}
-                className={({ isActive }) =>
-                  `eyebrow transition-colors hover:text-gold-deep ${
-                    isActive ? (solid ? 'text-maroon' : 'text-gold-soft') : solid ? 'text-ink/70' : 'text-ivory/85'
-                  }`
-                }
-              >
+              <NavLink key={l.label} to={l.to} className={linkClass}>
                 {l.label}
               </NavLink>
             ))}
           </nav>
 
-          <div className="md:hidden justify-self-end w-8" />
+          {/* mobile spacer keeps logo centered */}
+          <div className="md:hidden w-8 justify-self-end" />
         </div>
-      </div>
 
-      {/* mobile menu */}
-      {open && (
-        <motion.div
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: 'auto', opacity: 1 }}
-          exit={{ height: 0, opacity: 0 }}
-          className="md:hidden bg-ivory border-t border-ink/10"
-        >
-          <div className="flex flex-col px-6 py-6 gap-5">
-            {[...leftLinks, ...rightLinks].map((l) => (
-              <NavLink key={l.label} to={l.to} className="eyebrow text-ink/80">
-                {l.label}
-              </NavLink>
-            ))}
-          </div>
-        </motion.div>
-      )}
+        {/* mobile menu */}
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="md:hidden overflow-hidden"
+            >
+              <div className="flex flex-col items-center gap-5 px-6 pt-2 pb-7 border-t border-ink/10">
+                {[...leftLinks, ...rightLinks].map((l) => (
+                  <NavLink
+                    key={l.label}
+                    to={l.to}
+                    className={({ isActive }) =>
+                      `eyebrow pt-4 ${isActive ? 'text-maroon' : 'text-ink/80'}`
+                    }
+                  >
+                    {l.label}
+                  </NavLink>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </motion.header>
   )
 }
