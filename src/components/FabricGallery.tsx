@@ -1,7 +1,5 @@
 import { imgProps } from '../lib/img'
 import { m } from 'framer-motion'
-import { imgProps } from '../lib/img'
-import { m } from 'framer-motion'
 import { photos } from '../data/photos'
 import Flourish from './Flourish'
 
@@ -25,10 +23,8 @@ export default function FabricGallery() {
     <section className="relative bg-ivory py-24 md:py-32 px-6 md:px-10">
       <div className="max-w-7xl mx-auto">
         <m.div
-        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           transition={{ duration: 0.8 }}
           className="flex items-center gap-4 mb-12"
@@ -36,25 +32,21 @@ export default function FabricGallery() {
           <Flourish className="w-8 h-6 text-gold-deep" />
           <span className="eyebrow text-maroon/60">In the Studio</span>
         </m.div>
-        </m.div>
 
         {/* three columns, deliberately uneven heights for a considered, non-grid rhythm */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-6 items-end">
           {items.map((item, i) => (
-            <m.figure
             <m.figure
               key={item.caption}
               custom={i}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
-              viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
               variants={fade}
               className={`relative overflow-hidden ${
                 i === 1 ? 'sm:mb-10 aspect-[3/4]' : 'aspect-[4/5]'
               }`}
             >
-<<<<<<< HEAD
               <img
                 {...imgProps(item.photo, 'third')}
                 alt={item.alt}
@@ -63,7 +55,6 @@ export default function FabricGallery() {
               <figcaption className="absolute bottom-0 inset-x-0 px-4 py-3 bg-gradient-to-t from-ink/70 to-transparent">
                 <span className="eyebrow text-ivory/90 text-[10px]">{item.caption}</span>
               </figcaption>
-            </m.figure>
             </m.figure>
           ))}
         </div>

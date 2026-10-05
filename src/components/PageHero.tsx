@@ -1,5 +1,4 @@
 import { m } from 'framer-motion'
-import { m } from 'framer-motion'
 import Flourish from './Flourish'
 import { imgProps } from '../lib/img'
 
@@ -15,8 +14,6 @@ export default function PageHero({ eyebrow, title, subtitle, photo, photoAlt = '
   return (
     <section className="relative min-h-[62vh] md:min-h-[68vh] w-full overflow-hidden bg-maroon-deep flex items-end">
       {photo && (
-        <m.div
-          initial={{ scale: 1.04, opacity: 0.7 }}
         <m.div
           initial={{ scale: 1.04, opacity: 0.7 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -35,7 +32,6 @@ export default function PageHero({ eyebrow, title, subtitle, photo, photoAlt = '
       />
 
       <m.div
-      <m.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
@@ -53,7 +49,6 @@ export default function PageHero({ eyebrow, title, subtitle, photo, photoAlt = '
             </p>
           )}
         </div>
-      </m.div>
       </m.div>
     </section>
   )

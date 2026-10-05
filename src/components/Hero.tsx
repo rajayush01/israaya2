@@ -57,27 +57,6 @@ export default function Hero() {
     io.observe(section)
     return () => io.disconnect()
   }, [])
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const [isMobile] = useState(
-    () => typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches
-  )
-
-  // Pause the video decoder whenever the hero is off-screen so it never
-  // competes with scrolling further down the page.
-  useEffect(() => {
-    const video = videoRef.current
-    const section = sectionRef.current
-    if (!video || !section) return
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) video.play().catch(() => {})
-        else video.pause()
-      },
-      { threshold: 0 }
-    )
-    io.observe(section)
-    return () => io.disconnect()
-  }, [])
 
   const contentY = useTransform(
     scrollYProgress,
@@ -99,9 +78,7 @@ export default function Hero() {
 
       {/* ================= VIDEO BACKGROUND ================= */}
       <div className="absolute inset-0">
-      <div className="absolute inset-0">
         <video
-          ref={videoRef}
           ref={videoRef}
           autoPlay
           muted
@@ -111,22 +88,15 @@ export default function Hero() {
           poster={heroPoster}
           disablePictureInPicture
           src={isMobile ? heroVideoMobile : heroVideo}
-          poster={heroPoster}
-          disablePictureInPicture
-          src={isMobile ? heroVideoMobile : heroVideo}
           className="w-full h-full object-cover object-center"
         />
       </div>
-        />
-      </div>
 
-      {/* ================= OVERLAYS (one layer: shade + vignette) ================= */}
       {/* ================= OVERLAYS (one layer: shade + vignette) ================= */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(circle at 50% 45%, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.30) 75%, rgba(0,0,0,0.65) 100%), linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.20) 35%, rgba(0,0,0,0.45) 65%, rgba(0,0,0,0.82) 100%)',
             'radial-gradient(circle at 50% 45%, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.30) 75%, rgba(0,0,0,0.65) 100%), linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.20) 35%, rgba(0,0,0,0.45) 65%, rgba(0,0,0,0.82) 100%)',
         }}
       />
@@ -138,7 +108,6 @@ export default function Hero() {
         preserveAspectRatio="none"
         aria-hidden="true"
       >
-        <m.path
         <m.path
           d="M -50 720 C 150 680, 250 820, 420 760 S 700 620, 860 700 S 1050 640, 1120 690"
           fill="none"
@@ -154,7 +123,6 @@ export default function Hero() {
           }}
         />
 
-        <m.path
         <m.path
           d="M -50 260 C 180 210, 300 340, 480 280 S 760 160, 900 240"
           fill="none"
@@ -173,18 +141,15 @@ export default function Hero() {
 
       {/* ================= CONTENT ================= */}
       <m.div
-      <m.div
         style={{
           y: contentY,
           opacity: contentOpacity,
-          willChange: 'transform, opacity',
           willChange: 'transform, opacity',
         }}
         className="relative z-10 flex flex-col items-center justify-center min-h-[100svh] text-center px-6"
       >
 
         {/* LOGO */}
-        <m.div
         <m.div
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -200,16 +165,11 @@ export default function Hero() {
             decoding="async"
             loading="eager"
             {...highPriority}
-            decoding="async"
-            loading="eager"
-            {...highPriority}
             className="w-28 md:w-36 h-auto"
           />
         </m.div>
-        </m.div>
 
         {/* EYEBROW */}
-        <m.p
         <m.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -221,10 +181,8 @@ export default function Hero() {
         >
           Made in India · Worn Around the World
         </m.p>
-        </m.p>
 
         {/* BRAND NAME */}
-        <m.h1
         <m.h1
           initial="hidden"
           animate="show"
@@ -237,20 +195,16 @@ export default function Hero() {
               className="inline-block overflow-hidden"
             >
               <m.span
-              <m.span
                 variants={letterVariant}
                 className="inline-block"
               >
                 {l}
               </m.span>
-              </m.span>
             </span>
           ))}
         </m.h1>
-        </m.h1>
 
         {/* DESCRIPTION */}
-        <m.p
         <m.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -262,10 +216,8 @@ export default function Hero() {
         >
           Modern Indianwear, rooted in craft — weaving memory into every silhouette.
         </m.p>
-        </m.p>
 
         {/* CTA */}
-        <m.div
         <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -285,9 +237,7 @@ export default function Hero() {
             <span className="w-px h-10 bg-current opacity-60 origin-top animate-[pulse_2.4s_ease-in-out_infinite]" />
           </Link>
         </m.div>
-        </m.div>
 
-      </m.div>
       </m.div>
     </section>
   )

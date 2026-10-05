@@ -1,7 +1,5 @@
 import { imgProps } from '../lib/img'
 import { m } from 'framer-motion'
-import { imgProps } from '../lib/img'
-import { m } from 'framer-motion'
 import { photos } from '../data/photos'
 
 const fade = {
@@ -14,11 +12,9 @@ export default function Manifesto() {
     <section className="relative bg-ivory py-28 md:py-36 px-6 md:px-10 overflow-hidden">
       <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 md:gap-8">
         <m.div
-        <m.div
           className="md:col-span-4"
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           variants={fade}
         >
@@ -32,15 +28,12 @@ export default function Manifesto() {
           </h2>
 
           <m.div
-          <m.div
             initial={{ clipPath: 'inset(0 0 100% 0)' }}
             whileInView={{ clipPath: 'inset(0 0 0% 0)' }}
-            viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             transition={{ duration: 1, ease: [0.65, 0, 0.35, 1], delay: 0.2 }}
             className="relative mt-10 aspect-[3/4] max-w-[220px] overflow-hidden"
           >
-<<<<<<< HEAD
             <img
               {...imgProps(photos.manifesto, 'small')}
               alt="Israaya, hand-finished Indian wear"
@@ -48,15 +41,11 @@ export default function Manifesto() {
             />
           </m.div>
         </m.div>
-          </m.div>
-        </m.div>
 
-        <m.div
         <m.div
           className="md:col-span-7 md:col-start-6 flex flex-col justify-center gap-6"
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           variants={fade}
           transition={{ delay: 0.15 }}
@@ -79,7 +68,6 @@ export default function Manifesto() {
             <span className="h-px w-12 bg-gold-deep/60" />
             <span className="eyebrow text-gold-deep">Made in India. Worn Around the World.</span>
           </div>
-        </m.div>
         </m.div>
       </div>
     </section>
