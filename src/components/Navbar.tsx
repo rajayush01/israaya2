@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { m, AnimatePresence } from 'framer-motion'
+import { m, AnimatePresence } from 'framer-motion'
 import logo from '../assets/ISRAAYA LOGO.svg'
 import { highPriority } from '../lib/img'
 
@@ -41,6 +42,7 @@ const linkClass = ({ isActive }: { isActive: boolean }) =>
 
   return (
     <m.header
+    <m.header
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
@@ -48,7 +50,10 @@ const linkClass = ({ isActive }: { isActive: boolean }) =>
     >
       <div
         className={`pointer-events-auto mx-auto max-w-6xl rounded-full border transition-[background-color,border-color,box-shadow] duration-500 ${
+        className={`pointer-events-auto mx-auto max-w-6xl rounded-full border transition-[background-color,border-color,box-shadow] duration-500 ${
           solid
+            ? 'bg-ivory/95 border-ink/10 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.25)]'
+            : 'bg-ink/40 border-ivory/20'
             ? 'bg-ivory/95 border-ink/10 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.25)]'
             : 'bg-ink/40 border-ivory/20'
         } ${open ? 'rounded-3xl md:rounded-full' : ''}`}
@@ -82,6 +87,9 @@ const linkClass = ({ isActive }: { isActive: boolean }) =>
               decoding="async"
               loading="eager"
               {...highPriority}
+              decoding="async"
+              loading="eager"
+              {...highPriority}
               className="h-12 md:h-20 w-auto object-contain select-none"
               draggable={false}
             />
@@ -104,6 +112,7 @@ const linkClass = ({ isActive }: { isActive: boolean }) =>
         <AnimatePresence>
           {open && (
             <m.div
+            <m.div
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
@@ -124,9 +133,11 @@ const linkClass = ({ isActive }: { isActive: boolean }) =>
                 ))}
               </div>
             </m.div>
+            </m.div>
           )}
         </AnimatePresence>
       </div>
+    </m.header>
     </m.header>
   )
 }

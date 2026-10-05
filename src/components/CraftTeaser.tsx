@@ -2,6 +2,8 @@ import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { imgProps } from '../lib/img'
 import { m, useScroll, useTransform } from 'framer-motion'
+import { imgProps } from '../lib/img'
+import { m, useScroll, useTransform } from 'framer-motion'
 import Flourish from './Flourish'
 import SplitReveal from './SplitReveal'
 import { photos } from '../data/photos'
@@ -22,6 +24,7 @@ export default function CraftTeaser() {
               className="w-full h-full object-cover"
             />
           </m.div>
+          </m.div>
         </div>
 
         <div className="order-1 md:order-2">
@@ -32,8 +35,10 @@ export default function CraftTeaser() {
             className="font-display text-4xl md:text-5xl text-ink mt-4 mb-6 leading-[1.08]"
           />
           <m.p
+          <m.p
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="font-body text-[15px] md:text-base leading-relaxed text-ink/60 max-w-md mb-8"
@@ -42,8 +47,11 @@ export default function CraftTeaser() {
             photograph. Every technique on an Israaya piece is done by hand, start to finish.
           </m.p>
           <m.div
+          </m.p>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             transition={{ duration: 0.8, delay: 0.45 }}
           >
@@ -53,6 +61,7 @@ export default function CraftTeaser() {
             >
               Explore the Craft
             </Link>
+          </m.div>
           </m.div>
         </div>
       </div>

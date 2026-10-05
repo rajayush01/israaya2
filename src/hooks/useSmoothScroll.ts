@@ -19,16 +19,10 @@ export default function useSmoothScroll() {
     const lenis = new Lenis({
       lerp: 0.1,
       smoothWheel: true,
-      autoRaf: false,
     })
 
-    // Drive Lenis only while a scroll is actually happening — no idle 60fps loop
-    // competing with the hero video and animations.
-    let frameId = 0
-    let running = false
-    let idleFrames = 0
-
-    const tick = (time: number) => {
+    let frameId: number
+    function raf(time: number) {
       lenis.raf(time)
       idleFrames = lenis.isScrolling ? 0 : idleFrames + 1
       if (idleFrames > 12) {

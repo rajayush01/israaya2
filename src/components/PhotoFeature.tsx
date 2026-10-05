@@ -1,5 +1,7 @@
 import { imgProps } from '../lib/img'
 import { m } from 'framer-motion'
+import { imgProps } from '../lib/img'
+import { m } from 'framer-motion'
 import Flourish from './Flourish'
 
 interface PhotoFeatureProps {
@@ -35,16 +37,21 @@ export default function PhotoFeature({
             initial={{ scale: 1.05 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
+            viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
+            {...imgProps(photo, 'half')}
             {...imgProps(photo, 'half')}
             alt={photoAlt}
             className="w-full h-full object-cover"
           />
         </m.div>
+        </m.div>
 
+        <m.div
         <m.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
         >
@@ -60,6 +67,7 @@ export default function PhotoFeature({
               </p>
             ))}
           </div>
+        </m.div>
         </m.div>
       </div>
     </section>

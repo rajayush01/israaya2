@@ -2,6 +2,8 @@ import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { imgProps } from '../lib/img'
 import { m, useScroll, useTransform } from 'framer-motion'
+import { imgProps } from '../lib/img'
+import { m, useScroll, useTransform } from 'framer-motion'
 import Flourish from './Flourish'
 import SplitReveal from './SplitReveal'
 import { photos } from '../data/photos'
@@ -22,8 +24,10 @@ export default function JournalTeaser() {
             className="font-display text-4xl md:text-5xl text-ink mt-4 mb-6 leading-[1.08]"
           />
           <m.p
+          <m.p
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="font-body text-[15px] md:text-base leading-relaxed text-ink/60 max-w-md mb-8"
@@ -33,8 +37,11 @@ export default function JournalTeaser() {
             build.
           </m.p>
           <m.div
+          </m.p>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             transition={{ duration: 0.8, delay: 0.45 }}
           >
@@ -45,6 +52,7 @@ export default function JournalTeaser() {
               Read the Journal
             </Link>
           </m.div>
+          </m.div>
         </div>
 
         <div className="relative aspect-[4/5] overflow-hidden">
@@ -54,6 +62,7 @@ export default function JournalTeaser() {
               alt="Israaya, from the journal"
               className="w-full h-full object-cover"
             />
+          </m.div>
           </m.div>
         </div>
       </div>
