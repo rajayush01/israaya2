@@ -1,8 +1,11 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import logo from "../assets/logonobg.png"
 import heroVideo from "../assets/israaya-video.mp4"
+import heroVideoMobile from "../assets/israaya-video-mobile.mp4"
+import heroPoster from "../assets/israaya-poster.webp"
+import { highPriority } from '../lib/highPriority'
 
 const letters = 'Israaya'.split('')
 
@@ -33,11 +36,27 @@ export default function Hero() {
     offset: ['start start', 'end start'],
   })
 
-  const videoY = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ['0%', '12%']
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [isMobile] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches
   )
+
+  // Pause the video decoder whenever the hero is off-screen so it never
+  // competes with scrolling further down the page.
+  useEffect(() => {
+    const video = videoRef.current
+    const section = sectionRef.current
+    if (!video || !section) return
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) video.play().catch(() => {})
+        else video.pause()
+      },
+      { threshold: 0 }
+    )
+    io.observe(section)
+    return () => io.disconnect()
+  }, [])
 
   const contentY = useTransform(
     scrollYProgress,
@@ -58,21 +77,20 @@ export default function Hero() {
     >
 
       {/* ================= VIDEO BACKGROUND ================= */}
-      <motion.div
-        style={{ y: videoY }}
-        className="absolute inset-0 scale-[1.04]"
-      >
+      <div className="absolute inset-0">
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
+          poster={heroPoster}
+          disablePictureInPicture
+          src={isMobile ? heroVideoMobile : heroVideo}
           className="w-full h-full object-cover object-center"
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
-      </motion.div>
+        />
+      </div>
 
       {/* ================= CINEMATIC BLACK OVERLAY ================= */}
       <div
@@ -145,6 +163,7 @@ export default function Hero() {
         style={{
           y: contentY,
           opacity: contentOpacity,
+          willChange: 'transform, opacity',
         }}
         className="relative z-10 flex flex-col items-center justify-center min-h-[100svh] text-center px-6"
       >
@@ -162,6 +181,9 @@ export default function Hero() {
           <img
             src={logo}
             alt="Israaya Logo"
+            decoding="async"
+            loading="eager"
+            {...highPriority}
             className="w-28 md:w-36 h-auto"
           />
         </motion.div>

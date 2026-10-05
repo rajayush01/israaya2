@@ -24,7 +24,7 @@ export default function FabricGallery() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
+          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           transition={{ duration: 0.8 }}
           className="flex items-center gap-4 mb-12"
         >
@@ -40,13 +40,13 @@ export default function FabricGallery() {
               custom={i}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
               variants={fade}
               className={`relative overflow-hidden ${
                 i === 1 ? 'sm:mb-10 aspect-[3/4]' : 'aspect-[4/5]'
               }`}
             >
-              <img
+              <img loading="eager" decoding="async"
                 src={item.photo}
                 alt={item.alt}
                 className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"

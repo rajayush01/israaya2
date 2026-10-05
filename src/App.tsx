@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import useSmoothScroll from './hooks/useSmoothScroll'
+import { preloadAllImages } from './lib/preloadImages'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import CollectionPage from './pages/CollectionPage'
@@ -20,6 +21,12 @@ function ScrollToTop() {
 
 export default function App() {
   useSmoothScroll()
+
+  useEffect(() => {
+    // start once the page itself has painted, so it never delays first render
+    if (document.readyState === 'complete') preloadAllImages()
+    else window.addEventListener('load', () => preloadAllImages(), { once: true })
+  }, [])
 
   return (
     <div className="relative">

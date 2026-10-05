@@ -23,7 +23,7 @@ export default function JournalTeaser() {
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.6 }}
+            viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="font-body text-[15px] md:text-base leading-relaxed text-ink/60 max-w-md mb-8"
           >
@@ -34,7 +34,7 @@ export default function JournalTeaser() {
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.6 }}
+            viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             transition={{ duration: 0.8, delay: 0.45 }}
           >
             <Link
@@ -48,7 +48,7 @@ export default function JournalTeaser() {
 
         <div className="relative aspect-[4/5] overflow-hidden">
           <motion.div style={{ y }} className="absolute inset-0 -top-[10%] -bottom-[10%]">
-            <img
+            <img loading="eager" decoding="async"
               src={photos.journalTeaser}
               alt="Israaya, from the journal"
               className="w-full h-full object-cover"

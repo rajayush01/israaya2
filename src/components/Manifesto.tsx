@@ -14,7 +14,7 @@ export default function Manifesto() {
           className="md:col-span-4"
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           variants={fade}
         >
           <span className="eyebrow text-maroon/60">Our Story</span>
@@ -29,11 +29,11 @@ export default function Manifesto() {
           <motion.div
             initial={{ clipPath: 'inset(0 0 100% 0)' }}
             whileInView={{ clipPath: 'inset(0 0 0% 0)' }}
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             transition={{ duration: 1, ease: [0.65, 0, 0.35, 1], delay: 0.2 }}
             className="relative mt-10 aspect-[3/4] max-w-[220px] overflow-hidden"
           >
-            <img
+            <img loading="eager" decoding="async"
               src={photos.manifesto}
               alt="Israaya, hand-finished Indian wear"
               className="w-full h-full object-cover"
@@ -46,7 +46,7 @@ export default function Manifesto() {
           className="md:col-span-7 md:col-start-6 flex flex-col justify-center gap-6"
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           variants={fade}
           transition={{ delay: 0.15 }}
         >

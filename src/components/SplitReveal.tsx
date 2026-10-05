@@ -33,7 +33,7 @@ export default function SplitReveal({ text, className = '', delay = 0, as = 'h2'
       className={className}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.7 }}
+      viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
       variants={container}
       custom={delay}
     >

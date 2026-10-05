@@ -15,25 +15,25 @@ export default function ChapterCard({ piece, index }: { piece: ChapterPiece; ind
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.15, margin: '0px 0px -10% 0px' }}
+        viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         className="relative overflow-hidden"
       >
         <motion.div
           initial={{ scale: 1.15 }}
           whileInView={{ scale: 1 }}
-          viewport={{ once: true, amount: 0.15, margin: '0px 0px -10% 0px' }}
+          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
           className="absolute inset-0"
         >
-          <img src={piece.photo} alt={piece.photoAlt} className="w-full h-full object-cover" />
+          <img loading="eager" decoding="async" src={piece.photo} alt={piece.photoAlt} className="w-full h-full object-cover" />
         </motion.div>
         {/* colour-matched duotone tint, ties the photograph to this piece's palette */}
         <div
-          className="absolute inset-0 mix-blend-multiply"
+          className="absolute inset-0"
           style={{
             background: `linear-gradient(150deg, ${piece.swatch[0]} 0%, ${piece.swatch[1]} 65%, ${piece.swatch[1]} 100%)`,
-            opacity: 0.6,
+            opacity: 0.4,
           }}
         />
         <div
@@ -55,7 +55,7 @@ export default function ChapterCard({ piece, index }: { piece: ChapterPiece; ind
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
+        viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
         className="relative bg-maroon text-ivory flex flex-col justify-center px-8 py-14 md:px-16 md:py-16"
       >

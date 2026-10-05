@@ -15,7 +15,7 @@ export default function CraftTeaser() {
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
         <div className="relative aspect-[4/5] overflow-hidden order-2 md:order-1">
           <motion.div style={{ y }} className="absolute inset-0 -top-[10%] -bottom-[10%]">
-            <img
+            <img loading="eager" decoding="async"
               src={photos.craftTeaser}
               alt="Israaya hand embroidery detail"
               className="w-full h-full object-cover"
@@ -33,7 +33,7 @@ export default function CraftTeaser() {
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.6 }}
+            viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="font-body text-[15px] md:text-base leading-relaxed text-ink/60 max-w-md mb-8"
           >
@@ -43,7 +43,7 @@ export default function CraftTeaser() {
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.6 }}
+            viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             transition={{ duration: 0.8, delay: 0.45 }}
           >
             <Link

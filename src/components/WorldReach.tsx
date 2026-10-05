@@ -12,7 +12,7 @@ export default function WorldReach() {
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.6 }}
+        viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
         transition={{ duration: 0.9 }}
         className="relative text-center px-6"
       >
@@ -25,7 +25,7 @@ export default function WorldReach() {
       </motion.div>
 
       <div className="relative mt-16 overflow-hidden select-none">
-        <div className="flex whitespace-nowrap animate-[marquee_32s_linear_infinite]">
+        <div className="marquee-track flex whitespace-nowrap animate-[marquee_32s_linear_infinite]">
           {loop.map((c, i) => (
             <span
               key={i}
@@ -38,12 +38,6 @@ export default function WorldReach() {
         </div>
       </div>
 
-      <style>{`
-        @keyframes marquee {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
-        }
-      `}</style>
     </section>
   )
 }

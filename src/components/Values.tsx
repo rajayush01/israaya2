@@ -44,7 +44,7 @@ export default function Values() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
+          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           transition={{ duration: 0.8 }}
           className="max-w-2xl mb-16 md:mb-20"
         >
@@ -62,7 +62,7 @@ export default function Values() {
               custom={i}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, amount: 0.4 }}
+              viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
               variants={fade}
             >
               <Flourish className="w-8 h-6 text-gold-deep mb-5" />

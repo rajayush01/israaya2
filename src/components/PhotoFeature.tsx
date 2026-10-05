@@ -26,14 +26,14 @@ export default function PhotoFeature({
         <motion.div
           initial={{ opacity: 0, scale: 1.04 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.15, margin: '0px 0px -10% 0px' }}
+          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className={`relative aspect-[4/5] overflow-hidden ${reversed ? 'md:order-2' : ''}`}
         >
-          <motion.img
+          <motion.img loading="eager" decoding="async"
             initial={{ scale: 1.12 }}
             whileInView={{ scale: 1 }}
-            viewport={{ once: true, amount: 0.15, margin: '0px 0px -10% 0px' }}
+            viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
             src={photo}
             alt={photoAlt}
@@ -44,7 +44,7 @@ export default function PhotoFeature({
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
         >
           <Flourish className="w-9 h-7 text-gold-deep mb-6" />

@@ -26,7 +26,7 @@ export default function CollectionInfo() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
+          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           transition={{ duration: 0.8 }}
           className="max-w-3xl mb-14 md:mb-16"
         >
@@ -58,7 +58,7 @@ export default function CollectionInfo() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           transition={{ duration: 0.8, delay: 0.15 }}
           className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 pt-10 border-t border-ink/10"
         >

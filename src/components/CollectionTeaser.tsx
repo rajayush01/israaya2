@@ -13,7 +13,7 @@ export default function CollectionTeaser() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
+          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           transition={{ duration: 0.8 }}
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14"
         >
@@ -38,23 +38,23 @@ export default function CollectionTeaser() {
               key={piece.number}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
               transition={{ duration: 0.8, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
             >
               <Link to="/collection" className="group block">
                 <TiltCard className="relative aspect-[4/3] overflow-hidden mb-5">
                   <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105">
-                    <img
+                    <img loading="eager" decoding="async"
                       src={piece.photo}
                       alt={piece.photoAlt}
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div
-                    className="absolute inset-0 mix-blend-multiply"
+                    className="absolute inset-0"
                     style={{
                       background: `linear-gradient(150deg, ${piece.swatch[0]} 0%, ${piece.swatch[1]} 65%, ${piece.swatch[1]} 100%)`,
-                      opacity: 0.6,
+                      opacity: 0.4,
                     }}
                   />
                   <div

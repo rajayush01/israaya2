@@ -39,7 +39,7 @@ export default function Craft() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
+          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           transition={{ duration: 0.8 }}
           className="max-w-2xl mb-16 md:mb-20"
         >
@@ -57,12 +57,12 @@ export default function Craft() {
               custom={i}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, amount: 0.4 }}
+              viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
               variants={fade}
               className="group"
             >
               <div className="relative aspect-[4/3] overflow-hidden mb-6">
-                <img
+                <img loading="eager" decoding="async"
                   src={t.photo}
                   alt={t.alt}
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"

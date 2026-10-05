@@ -16,8 +16,14 @@ export default function TiltCard({ children, className = '' }: TiltCardProps) {
   const rotateX = useSpring(useTransform(my, [0, 1], [6, -6]), springCfg)
   const rotateY = useSpring(useTransform(mx, [0, 1], [-6, 6]), springCfg)
 
+  const rectRef = useRef<DOMRect | null>(null)
+
+  function handleEnter() {
+    rectRef.current = ref.current?.getBoundingClientRect() ?? null
+  }
+
   function handleMove(e: React.MouseEvent<HTMLDivElement>) {
-    const rect = ref.current?.getBoundingClientRect()
+    const rect = rectRef.current
     if (!rect) return
     mx.set((e.clientX - rect.left) / rect.width)
     my.set((e.clientY - rect.top) / rect.height)
@@ -31,6 +37,7 @@ export default function TiltCard({ children, className = '' }: TiltCardProps) {
   return (
     <motion.div
       ref={ref}
+      onMouseEnter={handleEnter}
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
       style={{ rotateX, rotateY, transformPerspective: 900 }}

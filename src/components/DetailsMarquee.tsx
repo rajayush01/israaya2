@@ -12,7 +12,7 @@ export default function DetailsMarquee() {
 
   return (
     <div className="relative bg-ink py-8 overflow-hidden border-y border-gold/15 select-none">
-      <div className="flex whitespace-nowrap animate-[marquee_38s_linear_infinite]">
+      <div className="marquee-track flex whitespace-nowrap animate-[marquee_38s_linear_infinite]">
         {loop.map((t, i) => (
           <span
             key={i}
@@ -23,12 +23,6 @@ export default function DetailsMarquee() {
           </span>
         ))}
       </div>
-      <style>{`
-        @keyframes marquee {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
-        }
-      `}</style>
     </div>
   )
 }
