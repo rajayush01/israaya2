@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 const details = [
   {
@@ -23,10 +23,10 @@ export default function CollectionInfo() {
   return (
     <section className="relative bg-ivory py-24 md:py-32 px-6 md:px-10">
       <div className="max-w-7xl mx-auto">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
+          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           transition={{ duration: 0.8 }}
           className="max-w-3xl mb-14 md:mb-16"
         >
@@ -53,12 +53,12 @@ export default function CollectionInfo() {
               repeat, and it will not return once it closes.
             </p>
           </div>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           transition={{ duration: 0.8, delay: 0.15 }}
           className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 pt-10 border-t border-ink/10"
         >
@@ -68,7 +68,7 @@ export default function CollectionInfo() {
               <p className="font-body text-sm leading-relaxed text-ink/55 mt-3">{d.body}</p>
             </div>
           ))}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   )

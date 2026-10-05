@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { imgProps } from '../lib/img'
+import { m, useScroll, useTransform } from 'framer-motion'
 import Flourish from './Flourish'
 import SplitReveal from './SplitReveal'
 import { photos } from '../data/photos'
@@ -20,21 +21,21 @@ export default function JournalTeaser() {
             text="Notes on memory, occasion, and building for both."
             className="font-display text-4xl md:text-5xl text-ink mt-4 mb-6 leading-[1.08]"
           />
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.6 }}
+            viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="font-body text-[15px] md:text-base leading-relaxed text-ink/60 max-w-md mb-8"
           >
             A piece has to work twice — once in photographs, and once in the room itself, under
             whatever light the evening actually has. We write about what that means for how we
             build.
-          </motion.p>
-          <motion.div
+          </m.p>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.6 }}
+            viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             transition={{ duration: 0.8, delay: 0.45 }}
           >
             <Link
@@ -43,17 +44,17 @@ export default function JournalTeaser() {
             >
               Read the Journal
             </Link>
-          </motion.div>
+          </m.div>
         </div>
 
         <div className="relative aspect-[4/5] overflow-hidden">
-          <motion.div style={{ y }} className="absolute inset-0 -top-[10%] -bottom-[10%]">
+          <m.div style={{ y }} className="absolute inset-0 -top-[10%] -bottom-[10%]">
             <img
-              src={photos.journalTeaser}
+              {...imgProps(photos.journalTeaser, 'half')}
               alt="Israaya, from the journal"
               className="w-full h-full object-cover"
             />
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

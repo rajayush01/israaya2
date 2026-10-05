@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 interface SplitRevealProps {
   text: string
@@ -25,7 +25,7 @@ const word = {
 
 /** Reveals text one word at a time, each word masked and sliding up into place. */
 export default function SplitReveal({ text, className = '', delay = 0, as = 'h2' }: SplitRevealProps) {
-  const Tag = motion[as] as typeof motion.h2
+  const Tag = m[as] as typeof m.h2
   const words = text.split(' ')
 
   return (
@@ -33,16 +33,16 @@ export default function SplitReveal({ text, className = '', delay = 0, as = 'h2'
       className={className}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.7 }}
+      viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
       variants={container}
       custom={delay}
     >
       {words.map((w, i) => (
         <span key={i} className="inline-block overflow-hidden align-top pb-[0.08em]">
-          <motion.span variants={word} className="inline-block">
+          <m.span variants={word} className="inline-block">
             {w}
             {i < words.length - 1 ? '\u00A0' : ''}
-          </motion.span>
+          </m.span>
         </span>
       ))}
     </Tag>
