@@ -15,9 +15,15 @@ export default function CraftTeaser() {
     <section ref={ref} className="relative bg-ivory py-24 md:py-36 px-6 md:px-10 overflow-hidden">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
         <div className="relative aspect-[4/5] overflow-hidden order-2 md:order-1">
+<<<<<<< HEAD
           <m.div style={{ y }} className="absolute inset-0 -top-[10%] -bottom-[10%]">
             <img
               {...imgProps(photos.craftTeaser, 'half')}
+=======
+          <motion.div style={{ y }} className="absolute inset-0 -top-[10%] -bottom-[10%]">
+            <img loading="eager" decoding="async"
+              src={photos.craftTeaser}
+>>>>>>> 2dffdd0697aed51743daed1954c1450c5b3a9ac9
               alt="Israaya hand embroidery detail"
               className="w-full h-full object-cover"
             />

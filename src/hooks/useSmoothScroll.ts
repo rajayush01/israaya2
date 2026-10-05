@@ -19,7 +19,12 @@ export default function useSmoothScroll() {
     const lenis = new Lenis({
       lerp: 0.1,
       smoothWheel: true,
+<<<<<<< HEAD
       autoRaf: false,
+=======
+      wheelMultiplier: 1,
+      touchMultiplier: 1,
+>>>>>>> 2dffdd0697aed51743daed1954c1450c5b3a9ac9
     })
 
     // Drive Lenis only while a scroll is actually happening — no idle 60fps loop

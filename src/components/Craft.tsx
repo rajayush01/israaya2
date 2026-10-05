@@ -63,8 +63,13 @@ export default function Craft() {
               className="group"
             >
               <div className="relative aspect-[4/3] overflow-hidden mb-6">
+<<<<<<< HEAD
                 <img
                   {...imgProps(t.photo, 'third')}
+=======
+                <img loading="eager" decoding="async"
+                  src={t.photo}
+>>>>>>> 2dffdd0697aed51743daed1954c1450c5b3a9ac9
                   alt={t.alt}
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />

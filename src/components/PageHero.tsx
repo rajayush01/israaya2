@@ -1,6 +1,10 @@
 import { m } from 'framer-motion'
 import Flourish from './Flourish'
+<<<<<<< HEAD
 import { imgProps } from '../lib/img'
+=======
+import { highPriority } from '../lib/highPriority'
+>>>>>>> 2dffdd0697aed51743daed1954c1450c5b3a9ac9
 
 interface PageHeroProps {
   eyebrow: string
@@ -20,8 +24,13 @@ export default function PageHero({ eyebrow, title, subtitle, photo, photoAlt = '
           transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
           className="absolute inset-0"
         >
+<<<<<<< HEAD
           <img {...imgProps(photo, 'hero', true)} alt={photoAlt} className="w-full h-full object-cover" />
         </m.div>
+=======
+          <img loading="eager" decoding="async" {...highPriority} src={photo} alt={photoAlt} className="w-full h-full object-cover" />
+        </motion.div>
+>>>>>>> 2dffdd0697aed51743daed1954c1450c5b3a9ac9
       )}
       <div
         className="absolute inset-0"

@@ -47,8 +47,13 @@ export default function FabricGallery() {
                 i === 1 ? 'sm:mb-10 aspect-[3/4]' : 'aspect-[4/5]'
               }`}
             >
+<<<<<<< HEAD
               <img
                 {...imgProps(item.photo, 'third')}
+=======
+              <img loading="eager" decoding="async"
+                src={item.photo}
+>>>>>>> 2dffdd0697aed51743daed1954c1450c5b3a9ac9
                 alt={item.alt}
                 className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"
               />

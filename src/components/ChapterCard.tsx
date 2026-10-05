@@ -28,6 +28,7 @@ export default function ChapterCard({ piece, index }: { piece: ChapterPiece; ind
           transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
           className="absolute inset-0"
         >
+<<<<<<< HEAD
           <img {...imgProps(piece.photo, 'half')} alt={piece.photoAlt} className="w-full h-full object-cover" />
         </m.div>
         {/* tint + bottom shade + highlight, flattened into a single paint layer */}
@@ -35,6 +36,16 @@ export default function ChapterCard({ piece, index }: { piece: ChapterPiece; ind
           className="absolute inset-0"
           style={{
             background: `radial-gradient(120% 100% at 20% 0%, rgba(255,255,255,0.18), transparent 55%), linear-gradient(0deg, rgba(0,0,0,0.35) 0%, transparent 40%), linear-gradient(150deg, ${rgba(piece.swatch[0], 0.4)} 0%, ${rgba(piece.swatch[1], 0.4)} 65%)`,
+=======
+          <img loading="eager" decoding="async" src={piece.photo} alt={piece.photoAlt} className="w-full h-full object-cover" />
+        </motion.div>
+        {/* colour-matched duotone tint, ties the photograph to this piece's palette */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `linear-gradient(150deg, ${piece.swatch[0]} 0%, ${piece.swatch[1]} 65%, ${piece.swatch[1]} 100%)`,
+            opacity: 0.4,
+>>>>>>> 2dffdd0697aed51743daed1954c1450c5b3a9ac9
           }}
         />
         {/* number watermark */}

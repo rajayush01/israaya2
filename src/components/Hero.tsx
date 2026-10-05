@@ -1,11 +1,19 @@
 import { useEffect, useRef, useState } from 'react'
+<<<<<<< HEAD
 import { m, useScroll, useTransform } from 'framer-motion'
+=======
+import { motion, useScroll, useTransform } from 'framer-motion'
+>>>>>>> 2dffdd0697aed51743daed1954c1450c5b3a9ac9
 import { Link } from 'react-router-dom'
 import logo from "../assets/logonobg.png"
 import heroVideo from "../assets/israaya-video.mp4"
 import heroVideoMobile from "../assets/israaya-video-mobile.mp4"
 import heroPoster from "../assets/israaya-poster.webp"
+<<<<<<< HEAD
 import { highPriority } from '../lib/img'
+=======
+import { highPriority } from '../lib/highPriority'
+>>>>>>> 2dffdd0697aed51743daed1954c1450c5b3a9ac9
 
 const letters = 'Israaya'.split('')
 

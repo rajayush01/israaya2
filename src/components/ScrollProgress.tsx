@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { m, useScroll } from 'framer-motion'
+=======
+import { motion, useScroll } from 'framer-motion'
+>>>>>>> 2dffdd0697aed51743daed1954c1450c5b3a9ac9
 
 export default function ScrollProgress() {
   const { scrollYProgress } = useScroll()

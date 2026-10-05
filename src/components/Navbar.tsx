@@ -2,7 +2,11 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { m, AnimatePresence } from 'framer-motion'
 import logo from '../assets/ISRAAYA LOGO.svg'
+<<<<<<< HEAD
 import { highPriority } from '../lib/img'
+=======
+import { highPriority } from '../lib/highPriority'
+>>>>>>> 2dffdd0697aed51743daed1954c1450c5b3a9ac9
 
 const leftLinks = [
   { label: 'Our Story', to: '/about' },

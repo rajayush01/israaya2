@@ -46,8 +46,13 @@ export default function CollectionTeaser() {
               <Link to="/collection" className="group block">
                 <TiltCard className="relative aspect-[4/3] overflow-hidden mb-5">
                   <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105">
+<<<<<<< HEAD
                     <img
                       {...imgProps(piece.photo, 'half')}
+=======
+                    <img loading="eager" decoding="async"
+                      src={piece.photo}
+>>>>>>> 2dffdd0697aed51743daed1954c1450c5b3a9ac9
                       alt={piece.photoAlt}
                       className="w-full h-full object-cover"
                     />
@@ -55,7 +60,12 @@ export default function CollectionTeaser() {
                   <div
                     className="absolute inset-0"
                     style={{
+<<<<<<< HEAD
                       background: `linear-gradient(0deg, rgba(0,0,0,0.35) 0%, transparent 40%), linear-gradient(150deg, ${rgba(piece.swatch[0], 0.4)} 0%, ${rgba(piece.swatch[1], 0.4)} 65%)`,
+=======
+                      background: `linear-gradient(150deg, ${piece.swatch[0]} 0%, ${piece.swatch[1]} 65%, ${piece.swatch[1]} 100%)`,
+                      opacity: 0.4,
+>>>>>>> 2dffdd0697aed51743daed1954c1450c5b3a9ac9
                     }}
                   />
                   <span className="absolute bottom-5 right-6 font-display text-6xl text-white/25 select-none">

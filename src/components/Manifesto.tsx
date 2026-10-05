@@ -34,8 +34,13 @@ export default function Manifesto() {
             transition={{ duration: 1, ease: [0.65, 0, 0.35, 1], delay: 0.2 }}
             className="relative mt-10 aspect-[3/4] max-w-[220px] overflow-hidden"
           >
+<<<<<<< HEAD
             <img
               {...imgProps(photos.manifesto, 'small')}
+=======
+            <img loading="eager" decoding="async"
+              src={photos.manifesto}
+>>>>>>> 2dffdd0697aed51743daed1954c1450c5b3a9ac9
               alt="Israaya, hand-finished Indian wear"
               className="w-full h-full object-cover"
             />
