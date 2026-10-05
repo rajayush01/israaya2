@@ -1,4 +1,6 @@
-import { motion } from 'framer-motion'
+import { imgProps } from '../lib/img'
+import { rgba } from '../lib/color'
+import { m } from 'framer-motion'
 import Flourish from './Flourish'
 import type { ChapterPiece } from '../data/collection'
 
@@ -12,50 +14,40 @@ export default function ChapterCard({ piece, index }: { piece: ChapterPiece; ind
       }`}
     >
       {/* image / fabric panel */}
-      <motion.div
+      <m.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.15, margin: '0px 0px -10% 0px' }}
+        viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         className="relative overflow-hidden"
       >
-        <motion.div
-          initial={{ scale: 1.15 }}
+        <m.div
+          initial={{ scale: 1.06 }}
           whileInView={{ scale: 1 }}
-          viewport={{ once: true, amount: 0.15, margin: '0px 0px -10% 0px' }}
+          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
           className="absolute inset-0"
         >
-          <img src={piece.photo} alt={piece.photoAlt} className="w-full h-full object-cover" />
-        </motion.div>
-        {/* colour-matched duotone tint, ties the photograph to this piece's palette */}
+          <img {...imgProps(piece.photo, 'half')} alt={piece.photoAlt} className="w-full h-full object-cover" />
+        </m.div>
+        {/* tint + bottom shade + highlight, flattened into a single paint layer */}
         <div
-          className="absolute inset-0 mix-blend-multiply"
+          className="absolute inset-0"
           style={{
-            background: `linear-gradient(150deg, ${piece.swatch[0]} 0%, ${piece.swatch[1]} 65%, ${piece.swatch[1]} 100%)`,
-            opacity: 0.6,
+            background: `radial-gradient(120% 100% at 20% 0%, rgba(255,255,255,0.18), transparent 55%), linear-gradient(0deg, rgba(0,0,0,0.35) 0%, transparent 40%), linear-gradient(150deg, ${rgba(piece.swatch[0], 0.4)} 0%, ${rgba(piece.swatch[1], 0.4)} 65%)`,
           }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(0deg, rgba(0,0,0,0.35) 0%, transparent 40%)' }}
-        />
-        <div className="absolute inset-0 grain" />
-        <div
-          className="absolute inset-0"
-          style={{ background: 'radial-gradient(120% 100% at 20% 0%, rgba(255,255,255,0.22), transparent 55%)' }}
         />
         {/* number watermark */}
         <span className="absolute bottom-6 right-7 font-display text-[6rem] leading-none text-white/25 select-none">
           {piece.number}
         </span>
-      </motion.div>
+      </m.div>
 
       {/* story card */}
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.4 }}
+        viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
         className="relative bg-maroon text-ivory flex flex-col justify-center px-8 py-14 md:px-16 md:py-16"
       >
@@ -84,7 +76,7 @@ export default function ChapterCard({ piece, index }: { piece: ChapterPiece; ind
         <div className="relative mt-8 pt-6 border-t border-gold/25">
           <p className="eyebrow text-gold-soft/70 leading-relaxed">{piece.detail}</p>
         </div>
-      </motion.div>
+      </m.div>
     </div>
   )
 }

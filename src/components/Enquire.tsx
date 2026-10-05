@@ -1,13 +1,13 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import Flourish from './Flourish'
 
 export default function Enquire() {
   return (
     <section className="relative bg-ivory py-28 md:py-32 px-6 md:px-10">
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.6 }}
+        viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
         transition={{ duration: 0.9 }}
         className="max-w-3xl mx-auto text-center"
       >
@@ -44,7 +44,7 @@ export default function Enquire() {
             @israayaindiaofficial
           </a>
         </div>
-      </motion.div>
+      </m.div>
     </section>
   )
 }

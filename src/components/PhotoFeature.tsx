@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { imgProps } from '../lib/img'
+import { m } from 'framer-motion'
 import Flourish from './Flourish'
 
 interface PhotoFeatureProps {
@@ -23,28 +24,28 @@ export default function PhotoFeature({
   return (
     <section className={`relative ${tone === 'ivory' ? 'bg-ivory' : 'bg-sand'} py-24 md:py-32 px-6 md:px-10`}>
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 1.04 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.15, margin: '0px 0px -10% 0px' }}
+        <m.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className={`relative aspect-[4/5] overflow-hidden ${reversed ? 'md:order-2' : ''}`}
         >
-          <motion.img
-            initial={{ scale: 1.12 }}
+          <m.img
+            initial={{ scale: 1.05 }}
             whileInView={{ scale: 1 }}
-            viewport={{ once: true, amount: 0.15, margin: '0px 0px -10% 0px' }}
+            viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
             transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
-            src={photo}
+            {...imgProps(photo, 'half')}
             alt={photoAlt}
             className="w-full h-full object-cover"
           />
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
         >
           <Flourish className="w-9 h-7 text-gold-deep mb-6" />
@@ -59,7 +60,7 @@ export default function PhotoFeature({
               </p>
             ))}
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   )

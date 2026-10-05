@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
+import { m, AnimatePresence } from 'framer-motion'
 import logo from '../assets/ISRAAYA LOGO.svg'
+import { highPriority } from '../lib/img'
 
 const leftLinks = [
   { label: 'Our Story', to: '/about' },
@@ -39,17 +40,17 @@ const linkClass = ({ isActive }: { isActive: boolean }) =>
     }`
 
   return (
-    <motion.header
+    <m.header
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
       className="fixed top-3 md:top-5 inset-x-0 z-50 px-3 md:px-8 pointer-events-none"
     >
       <div
-        className={`pointer-events-auto mx-auto max-w-6xl rounded-full border backdrop-blur-md transition-all duration-500 ${
+        className={`pointer-events-auto mx-auto max-w-6xl rounded-full border transition-[background-color,border-color,box-shadow] duration-500 ${
           solid
-            ? 'bg-ivory/90 border-ink/10 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.25)]'
-            : 'bg-ink/20 border-ivory/20'
+            ? 'bg-ivory/95 border-ink/10 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.25)]'
+            : 'bg-ink/40 border-ivory/20'
         } ${open ? 'rounded-3xl md:rounded-full' : ''}`}
       >
         <div className="grid grid-cols-[1fr_auto_1fr] items-center h-16 md:h-20 px-5 md:px-10">
@@ -78,6 +79,9 @@ const linkClass = ({ isActive }: { isActive: boolean }) =>
             <img
               src={logo}
               alt="Israaya Logo"
+              decoding="async"
+              loading="eager"
+              {...highPriority}
               className="h-12 md:h-20 w-auto object-contain select-none"
               draggable={false}
             />
@@ -99,7 +103,7 @@ const linkClass = ({ isActive }: { isActive: boolean }) =>
         {/* mobile menu */}
         <AnimatePresence>
           {open && (
-            <motion.div
+            <m.div
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
@@ -119,10 +123,10 @@ const linkClass = ({ isActive }: { isActive: boolean }) =>
                   </NavLink>
                 ))}
               </div>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
       </div>
-    </motion.header>
+    </m.header>
   )
 }

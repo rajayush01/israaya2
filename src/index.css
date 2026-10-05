@@ -11,8 +11,15 @@
     scroll-behavior: auto;
   }
 
+  /* Lenis recommended base styles */
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+  .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+  .lenis.lenis-stopped { overflow: hidden; }
+
   body {
     @apply bg-ivory text-ink font-body antialiased;
+    overflow-x: hidden;
     font-feature-settings: 'liga' 1, 'kern' 1;
   }
 
@@ -44,9 +51,9 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: theme('backgroundImage.grain');
+    background-image: url('./assets/grain.png');
+    background-size: 160px 160px;
     pointer-events: none;
-    mix-blend-mode: overlay;
   }
 
   .text-stroke-gold {
@@ -66,3 +73,9 @@
     scroll-behavior: auto !important;
   }
 }
+
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+.marquee-track { will-change: transform; backface-visibility: hidden; }

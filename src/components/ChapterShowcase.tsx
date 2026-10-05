@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import ChapterCard from './ChapterCard'
 import { nikhaarCollection } from '../data/collection'
 
@@ -6,10 +6,10 @@ export default function ChapterShowcase() {
   return (
     <section id="collection" className="relative bg-ink">
       <div className="px-6 md:px-10 pt-24 pb-14 max-w-7xl mx-auto">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.6 }}
+          viewport={{ once: true, amount: 0.05, margin: '0px 0px 12% 0px' }}
           transition={{ duration: 0.8 }}
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
         >
@@ -21,7 +21,7 @@ export default function ChapterShowcase() {
             A first chapter told in four pieces — each one worked by hand, numbered in the order
             it was made rather than the order it will be worn.
           </p>
-        </motion.div>
+        </m.div>
       </div>
 
       <div className="divide-y divide-gold/15">

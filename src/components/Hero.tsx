@@ -1,8 +1,11 @@
-import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
+import { m, useScroll, useTransform } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import logo from "../assets/logonobg.png"
 import heroVideo from "../assets/israaya-video.mp4"
+import heroVideoMobile from "../assets/israaya-video-mobile.mp4"
+import heroPoster from "../assets/israaya-poster.webp"
+import { highPriority } from '../lib/img'
 
 const letters = 'Israaya'.split('')
 
@@ -33,11 +36,27 @@ export default function Hero() {
     offset: ['start start', 'end start'],
   })
 
-  const videoY = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ['0%', '12%']
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [isMobile] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches
   )
+
+  // Pause the video decoder whenever the hero is off-screen so it never
+  // competes with scrolling further down the page.
+  useEffect(() => {
+    const video = videoRef.current
+    const section = sectionRef.current
+    if (!video || !section) return
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) video.play().catch(() => {})
+        else video.pause()
+      },
+      { threshold: 0 }
+    )
+    io.observe(section)
+    return () => io.disconnect()
+  }, [])
 
   const contentY = useTransform(
     scrollYProgress,
@@ -58,49 +77,29 @@ export default function Hero() {
     >
 
       {/* ================= VIDEO BACKGROUND ================= */}
-      <motion.div
-        style={{ y: videoY }}
-        className="absolute inset-0 scale-[1.04]"
-      >
+      <div className="absolute inset-0">
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
+          poster={heroPoster}
+          disablePictureInPicture
+          src={isMobile ? heroVideoMobile : heroVideo}
           className="w-full h-full object-cover object-center"
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
-      </motion.div>
+        />
+      </div>
 
-      {/* ================= CINEMATIC BLACK OVERLAY ================= */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: `
-            linear-gradient(
-              180deg,
-              rgba(0,0,0,0.45) 0%,
-              rgba(0,0,0,0.20) 35%,
-              rgba(0,0,0,0.45) 65%,
-              rgba(0,0,0,0.82) 100%
-            )
-          `,
-        }}
-      />
-
-      {/* ================= SUBTLE CENTER VIGNETTE ================= */}
+      {/* ================= OVERLAYS (one layer: shade + vignette) ================= */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(circle at 50% 45%, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.30) 75%, rgba(0,0,0,0.65) 100%)',
+            'radial-gradient(circle at 50% 45%, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.30) 75%, rgba(0,0,0,0.65) 100%), linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.20) 35%, rgba(0,0,0,0.45) 65%, rgba(0,0,0,0.82) 100%)',
         }}
       />
-
-      {/* ================= FILM GRAIN ================= */}
-      <div className="absolute inset-0 grain opacity-40" />
 
       {/* ================= GOLD THREAD ================= */}
       <svg
@@ -109,7 +108,7 @@ export default function Hero() {
         preserveAspectRatio="none"
         aria-hidden="true"
       >
-        <motion.path
+        <m.path
           d="M -50 720 C 150 680, 250 820, 420 760 S 700 620, 860 700 S 1050 640, 1120 690"
           fill="none"
           stroke="#C6A15B"
@@ -124,7 +123,7 @@ export default function Hero() {
           }}
         />
 
-        <motion.path
+        <m.path
           d="M -50 260 C 180 210, 300 340, 480 280 S 760 160, 900 240"
           fill="none"
           stroke="#C6A15B"
@@ -141,16 +140,17 @@ export default function Hero() {
       </svg>
 
       {/* ================= CONTENT ================= */}
-      <motion.div
+      <m.div
         style={{
           y: contentY,
           opacity: contentOpacity,
+          willChange: 'transform, opacity',
         }}
         className="relative z-10 flex flex-col items-center justify-center min-h-[100svh] text-center px-6"
       >
 
         {/* LOGO */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
@@ -162,12 +162,15 @@ export default function Hero() {
           <img
             src={logo}
             alt="Israaya Logo"
+            decoding="async"
+            loading="eager"
+            {...highPriority}
             className="w-28 md:w-36 h-auto"
           />
-        </motion.div>
+        </m.div>
 
         {/* EYEBROW */}
-        <motion.p
+        <m.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -177,10 +180,10 @@ export default function Hero() {
           className="eyebrow text-white/75 mb-6"
         >
           Made in India · Worn Around the World
-        </motion.p>
+        </m.p>
 
         {/* BRAND NAME */}
-        <motion.h1
+        <m.h1
           initial="hidden"
           animate="show"
           variants={letterContainer}
@@ -191,18 +194,18 @@ export default function Hero() {
               key={i}
               className="inline-block overflow-hidden"
             >
-              <motion.span
+              <m.span
                 variants={letterVariant}
                 className="inline-block"
               >
                 {l}
-              </motion.span>
+              </m.span>
             </span>
           ))}
-        </motion.h1>
+        </m.h1>
 
         {/* DESCRIPTION */}
-        <motion.p
+        <m.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -212,10 +215,10 @@ export default function Hero() {
           className="font-display italic text-xl md:text-2xl text-white/80 mt-5 max-w-xl"
         >
           Modern Indianwear, rooted in craft — weaving memory into every silhouette.
-        </motion.p>
+        </m.p>
 
         {/* CTA */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
@@ -233,9 +236,9 @@ export default function Hero() {
 
             <span className="w-px h-10 bg-current opacity-60 origin-top animate-[pulse_2.4s_ease-in-out_infinite]" />
           </Link>
-        </motion.div>
+        </m.div>
 
-      </motion.div>
+      </m.div>
     </section>
   )
 }
