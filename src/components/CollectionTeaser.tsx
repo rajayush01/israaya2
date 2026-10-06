@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { imgProps } from '../lib/img'
-import { rgba } from '../lib/color'
+
 import { m } from 'framer-motion'
 import { nikhaarCollection } from '../data/collection'
 import SplitReveal from './SplitReveal'
@@ -52,12 +52,12 @@ export default function CollectionTeaser() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div
-                    className="absolute inset-0"
-                    style={{
-                      background: `linear-gradient(0deg, rgba(0,0,0,0.35) 0%, transparent 40%), linear-gradient(150deg, ${rgba(piece.swatch[0], 0.4)} 0%, ${rgba(piece.swatch[1], 0.4)} 65%)`,
-                    }}
-                  />
+                 <div
+  className="absolute inset-0"
+  style={{
+    background: 'linear-gradient(0deg, rgba(0,0,0,0.35) 0%, transparent 40%)',
+  }}
+/>
                   <span className="absolute bottom-5 right-6 font-display text-6xl text-white/25 select-none">
                     {piece.number}
                   </span>
